@@ -6,19 +6,19 @@ commands to automate the running of Cabal commands within vim and opening the er
 vim's builtin buffer types to make integration as seamless as possible.
 
 If @Twinside (who originally wrote the Cabal syntax file) wishes to incorporate my changes into his repository
-he/she may. I just want to be clear that this is not just going to be a syntax file so it may change the way
+he may. I just want to be clear that this is not just going to be a syntax file so it may change the way
 your existing vim setup works more than just syntax highlighting of .cabal files. Be warned.
 
 Authors
 -------
 
-* Syntax file was authored by Twinside
+* Syntax file was authored by Vincent Berthoux Twinside)
 * All other work was authored by Susan Potter (mbbx6spp)
 
 Licenses
 --------
 
-* The syntax file is licensed under Twinside's preferred license and is copyrighted by Twinside on Github, 2010-2011.
+* The syntax file is licensed under ???? license and is copyrighted by Vincent Berthoux, 2010-2011.
 * All other code in this repository is licensed under the BSD 3-clause and is copyrighted by Susan Potter, 2011.
 
 Installation
