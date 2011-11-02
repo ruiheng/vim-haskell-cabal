@@ -9,10 +9,16 @@ If @Twinside (who originally wrote the Cabal syntax file) wishes to incorporate 
 he may. I just want to be clear that this is not just going to be a syntax file so it may change the way
 your existing vim setup works more than just syntax highlighting of .cabal files. Be warned.
 
+Installation
+------------
+
+ * Just drop `syntax/cabal.vim` in your `~/.vim/syntax` or ~/vimfiles/syntax
+ * use pathogen and clone this repository in your `~/.vim/bundle` or `~/vimfiles/bundle`
+
 Authors
 -------
 
-* Syntax file was authored by Vincent Berthoux Twinside)
+* Syntax file was authored by Vincent Berthoux (Twinside)
 * All other work was authored by Susan Potter (mbbx6spp)
 
 Licenses
@@ -20,10 +26,4 @@ Licenses
 
 * The syntax file is licensed under ???? license and is copyrighted by Vincent Berthoux, 2010-2011.
 * All other code in this repository is licensed under the BSD 3-clause and is copyrighted by Susan Potter, 2011.
-
-Installation
-------------
-
- * Just drop `syntax/cabal.vim` in your `~/.vim/syntax` or ~/vimfiles/syntax
- * use pathogen and clone this repository in your `~/.vim/bundle` or `~/vimfiles/bundle`
 
