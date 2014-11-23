@@ -9,7 +9,7 @@
 function cabal#ErrorFormatFor(subCmd)
   let subCmd = a:subCmd
   let errorFormats = {}
-  let errorFormats['compile']="%f:%l: %m"
+  let errorFormats['build']="%f:%l:%c: Warning:,%f:%l:%c:,%f:%l:%c: %m"
 
   for cmd in g:cabalSubcommands
     if !has_key(errorFormats, cmd)
@@ -45,9 +45,9 @@ function cabal#ConvertErrorMessages()
   if &l:makeprg =~ 'cabal'
     let quickfixList = getqflist()
     " Only show valid quickfix lines in output
-    call filter(quickfixList, 'v:val.valid')
+    "call filter(quickfixList, 'v:val.valid')
     " filter to remove unnecessary quickfix line output
-    call filter(quickfixList, 'v:val.text !~ "Warning:"')
+    call filter(quickfixList, 'v:val.text !~ "Loading package "')
     call setqflist(quickfixList)
   endif
 endfunction
