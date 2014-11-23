@@ -60,6 +60,10 @@ function cabal#AutoCompleteSubcommands(ArgLead, CmdLine, CursorPos)
   return matches
 endfunction
 
+function cabal#Strip(input_string)
+    return substitute(a:input_string, '^\s*\(.\{-}\)\s*$', '\1', '')
+endfunction
+
 function cabal#SetupSubcommands()
   if !exists('g:cabalSubcommands')
     try
@@ -68,7 +72,8 @@ function cabal#SetupSubcommands()
     if v:shell_error != 0
       return []
     endif
-    call map(lines, 'matchstr(v:val, "[a-zA-Z0-9-]*")')
+    call map(lines, 'matchstr(v:val, "^  [a-zA-Z0-9-]*")')
+    call map(lines, 'cabal#Strip(v:val)')
     call filter(lines, 'v:val != ""')
     let g:cabalSubcommands = lines
   endif
