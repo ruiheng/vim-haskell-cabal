@@ -20,7 +20,7 @@ augroup cabalPlugin
 augroup END
 
 function s:EnableCabalPlugin()
-  let cabalCfgPath = findfile("*.cabal", getcwd())
+  let cabalCfgPath = glob("*.cabal", getcwd())
   if filereadable(cabalCfgPath)
     call cabal#SetupBufCommands()
     silent doautocmd cabalPlugin
