@@ -28,8 +28,12 @@ function cabal#Execute(subCmd)
   try
     let &l:makeprg = 'cabal'
     let &l:errorformat = cabal#ErrorFormatFor(subCmd)
-    exec 'make '.subCmd
-    copen
+    exec 'make! '.subCmd
+    let l:quickfixList = getqflist()
+    call filter(l:quickfixList, 'v:val.valid')
+    if len(l:quickfixList)
+      copen
+    endif
   catch /^Vim(\a\+):E42:/
     " do nothing, because there are no errors...maybe output SUCCESS or
     " something?
